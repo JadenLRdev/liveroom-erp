@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-dark: #040515;
+  --color-brand-charcoal: #252b36;
+  --color-brand-blue: #00479a;
+  --color-brand-orange: #f68e3f;
+  --color-brand-light: #f3f5f8;
+
+  --color-primary: #00479a;
+  --color-primary-strong: #f68e3f;
+  --color-primary-soft: #dce6f3;
+  --color-primary-softer: #eef3f9;
+
+  --color-canvas: #f3f5f8;
+  --color-surface: #ffffff;
+  --color-subtle: #f8f9fb;
+  --color-line: #e1e5ec;
+  --color-line-strong: #c9d0db;
+
+  --color-ink: #040515;
+  --color-ink-2: #4b5363;
+  --color-muted: #7b8494;
+
+  --color-sidebar: #040515;
+  --color-sidebar-hover: #252b36;
+  --color-sidebar-active: #f68e3f;
+  --color-sidebar-text: #f3f5f8;
+  --color-sidebar-muted: #8e95a5;
+
+  --color-success: #2f855a;
+  --color-success-soft: #e5f2ea;
+  --color-warning: #d9701a;
+  --color-warning-soft: #fef0e4;
+  --color-danger: #c0392b;
+  --color-danger-soft: #f8e6e4;
+  --color-info: #00479a;
+  --color-info-soft: #e5edf7;
+
+  --radius-card: 14px;
+  --radius-control: 10px;
+  --shadow-card: 0 1px 3px 0 rgb(4 5 21 / 0.06);
+  --shadow-dialog: 0 24px 48px 0 rgb(4 5 21 / 0.25);
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  ::selection {
+    background: var(--color-primary-soft);
+  }
+}
+
+@utility card {
+  @apply rounded-card border border-line bg-surface shadow-card;
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
