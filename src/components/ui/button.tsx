@@ -36,7 +36,7 @@ type ButtonBaseProps =VariantProps<typeof buttonVariants> &{
 type ButtonProps =ButtonBaseProps &
 (
     | ({href: string}& Omit<React.ComponentProps<typeof Link>, "href" | "className" | "children">)
-    | ({href: undefined} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>,"className" | "children">)
+    | ({href?: undefined} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>,"className" | "children">)
 );
 
 export function Button({variant, size, icon: Icon, iconRight: IconRight, className, children, ...props }:ButtonProps){
@@ -66,4 +66,4 @@ export function Button({variant, size, icon: Icon, iconRight: IconRight, classNa
     );
 }
 
-export {buttonVarients};
+export {buttonVariants};
